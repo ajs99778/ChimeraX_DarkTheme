@@ -1,0 +1,34 @@
+<BundleInfo name="ChimeraX_DarkTheme" 
+            customInit="true"
+            minSessionVersion="3"
+            maxSessionVersion="3"
+            package="DarkTheme"
+            purePython="true"
+            version="0.1">
+            
+            <Author>Tony Schaefer</Author>
+            <Email>tony.schaefer@uga.edu</Email>
+            <URL>https://github.com/ajs99778/ChimeraX_DarkTheme</URL>
+            <License>license.txt</License>
+            <Synopsis>dark theme for ChimeraX</Synopsis>
+            <Description>dark theme for ChimeraX
+            </Description>
+            
+            <Categories>
+                <Category name="UI"/>
+            </Categories>
+            
+            <Classifiers>
+                <PythonClassifier>Development Status :: 1 - Planning</PythonClassifier>
+                <PythonClassifier>License :: OSI Approved :: The Unlicense (Unlicense)</PythonClassifier>
+                <PythonClassifier>Framework :: ChimeraX</PythonClassifier>
+                <PythonClassifier>Natural Language :: English</PythonClassifier>
+                <PythonClassifier>Programming Language :: Python :: 3</PythonClassifier>
+            </Classifiers>
+
+    <DataFiles>
+        <DataFile>dark.qss</DataFile>
+        <DataFile>license.txt</DataFile>
+    </DataFiles>
+
+</BundleInfo>

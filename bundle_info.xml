@@ -1,17 +1,17 @@
-<BundleInfo name="ChimeraX_DarkTheme" 
+<BundleInfo name="ChimeraX_themes" 
             customInit="true"
             minSessionVersion="3"
             maxSessionVersion="3"
-            package="DarkTheme"
+            package="themes"
             purePython="true"
-            version="0.1">
+            version="0.2">
             
             <Author>Tony Schaefer</Author>
             <Email>tony.schaefer@uga.edu</Email>
             <URL>https://github.com/ajs99778/ChimeraX_DarkTheme</URL>
             <License>license.txt</License>
-            <Synopsis>dark theme for ChimeraX</Synopsis>
-            <Description>dark theme for ChimeraX
+            <Synopsis>themes for ChimeraX UI</Synopsis>
+            <Description>themes for ChimeraX UI
             </Description>
             
             <Categories>
@@ -27,8 +27,8 @@
             </Classifiers>
 
     <DataFiles>
-        <DataFile>dark.qss</DataFile>
-        <DataFile>license.txt</DataFile>
+        <DataFile>solarized light.qss</DataFile>
+        <DataFile>solarized dark.qss</DataFile>
     </DataFiles>
 
 </BundleInfo>

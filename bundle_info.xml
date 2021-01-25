@@ -4,11 +4,11 @@
             maxSessionVersion="3"
             package="themes"
             purePython="true"
-            version="0.2">
+            version="0.3">
             
             <Author>Tony Schaefer</Author>
             <Email>tony.schaefer@uga.edu</Email>
-            <URL>https://github.com/ajs99778/ChimeraX_DarkTheme</URL>
+            <URL>https://github.com/ajs99778/ChimeraX_Themes</URL>
             <License>license.txt</License>
             <Synopsis>themes for ChimeraX UI</Synopsis>
             <Description>themes for ChimeraX UI
@@ -18,6 +18,21 @@
                 <Category name="UI"/>
             </Categories>
             
+            <Dependencies>
+                <Dependency name="ChimeraX-Core" version="~=1.2.dev"/>
+            </Dependencies>
+
+            <Managers>
+                <Manager name="theme_manager" uiOnly="true"/>
+            </Managers>
+            
+            <Providers manager="theme_manager">
+                <Provider name="Default"/>
+                <Provider name="solarized dark"/>
+                <Provider name="solarized light"/>
+                <Provider name="dark"/>
+            </Providers>
+
             <Classifiers>
                 <PythonClassifier>Development Status :: 1 - Planning</PythonClassifier>
                 <PythonClassifier>License :: OSI Approved :: The Unlicense (Unlicense)</PythonClassifier>
@@ -27,8 +42,7 @@
             </Classifiers>
 
     <DataFiles>
-        <DataFile>solarized light.qss</DataFile>
-        <DataFile>solarized dark.qss</DataFile>
+        <DataDir>style_sheets</DataDir>
     </DataFiles>
 
 </BundleInfo>

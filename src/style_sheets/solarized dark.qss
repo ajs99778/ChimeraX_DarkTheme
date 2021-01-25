@@ -29,6 +29,10 @@ QPushButton:hover, QToolButton:hover {
     background-color: #1a4550;
 }
 
+QPushButton:focus {
+	background-color: #1a5550;
+}
+
 QPushButton {
     background-color: #0a3540;
 }
@@ -49,6 +53,16 @@ QMenu::item:!selected {
     background-color: #073642;
 }
 
+QMenu {
+	border: 1px solid #839496;
+}
+
+QMenu::separator {
+	height: 2px;
+	background: #839496;
+	margin-left: 5px;
+	margin-right: 5px;
+}
 
 /* -- QMenuBar -- */
 QMenuBar {
@@ -62,6 +76,14 @@ QMenuBar::item:selected {
 
 
 /* -- QHeaderView -- */
+QHeaderView {
+	background-color: #174652;
+	border: 1px transparent;
+	border-radius: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
 QHeaderView::section {
     background-color: #174652;
     alternate-background-color: #174652;
@@ -78,6 +100,10 @@ QHeaderView:section:checked {
 }
 
 
+/* -- QTableCornerButton -- */
+QTableCornerButton::section {
+	background-color: #002b36;
+}
 
 /* -- QLineEdit -- */
 QLineEdit {
@@ -130,13 +156,13 @@ QTabBar::tab:left {
     border-top: 1px solid #002632;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
-    border-right: 1px solid #002632;
+    border-left: 1px solid #002632;
 }
 
 QTabBar::tab:right {
     border-bottom: 1px solid #002632;
     border-top: 1px solid #002632;
-    border-left: 1px solid #002632;
+    border-right: 1px solid #002632;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
 }
@@ -227,3 +253,16 @@ QFrame:disabled, QGroupBox:disabled {
     color: #536466;
     background-color: #275662;
 }
+
+/* -- QAbstractSpinBox -- */
+QAbstractSpinBox {
+	border: 1px solid #3daee9;
+	color: #6a6a6a;
+}
+
+QAbstractSpinBox:hover, QAbstractSpinBox:pressed {
+    background-color: #174652;
+	border: 1px solid #839496;
+	color: #839496;
+}
+

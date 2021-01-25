@@ -1,0 +1,621 @@
+/*
+Colour scheme used:
+- White (text): #eff0f1
+- Dark black (main bg): #272a2d
+- Lighter dark black (menu bar): #373b3f
+- Dark blue: #18465d
+- Gray: #76797C
+- Red (accents): #db1c49
+
+Useful reference on QSS:
+ - http://doc.qt.io/qt-5/stylesheet-reference.html#alternate-background-color-prop
+
+edited from https://github.com/thatlittleboy/TeXstudio-Qt-Stylesheet
+*/
+
+/*================================================================
+QWidget
+================================================================*/
+QWidget {
+	color: #eff0f1;
+	background-color: #272a2d;
+    alternate-background-color: #373b3f;
+	selection-background-color: #db1c49;
+	selection-color: #eff0f1;
+    border-top-color: #373b3f;
+    border-left-color: #373b3f;
+    border-right-color: #18465d;
+    border-bottom-color: #18465d;
+}
+
+
+QWidget:disabled {
+    color: #9fa0a1;
+}
+
+
+/*================================================================
+QLabel 
+================================================================*/
+QLabel {
+    padding-left: 1px;
+}
+
+
+/*================================================================
+QMenuBar - e.g. Main toolbar (file/edit/idefix etc.)
+================================================================*/
+QMenuBar {
+	color: #eff0f1;
+	background-color: #373b3f;
+}
+
+QMenuBar::item {
+	background: transparent;
+}
+
+/*================================================================
+QMenu
+================================================================*/
+QMenu {
+	border: 1px solid #76797C;
+	color: #eff0f1;
+	margin: 2px;
+}
+
+QMenu::separator {
+	height: 2px;
+	background: #76797C;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+/*================================================================
+QScrollBar - e.g. Scrollbar in internal PDFviewer, editor window etc.
+================================================================*/
+
+QScrollBar:horizontal {
+	height: 20px;
+	margin: 3px 22px 3px 22px;
+	border: 1px transparent #2A2929;
+	background-color: #000000;
+}
+
+QScrollBar::handle:horizontal {
+	background-color: #76797C;
+	min-width: 20px;
+}
+
+QScrollBar::add-line:horizontal {
+	margin: 0px 3px 0px 3px;
+	width: 15px;
+	height: 15px;
+	subcontrol-position: right;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+	margin: 0px 3px 0px 3px;
+	height: 15px;
+	width: 15px;
+	subcontrol-position: left;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:horizontal:hover,
+QScrollBar::add-line:horizontal:on {
+	height: 15px;
+	width: 15px;
+	subcontrol-position: right;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal:hover,
+QScrollBar::sub-line:horizontal:on {
+	height: 15px;
+	width: 15px;
+	subcontrol-position: left;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:horizontal,
+QScrollBar::down-arrow:horizontal {
+	background: none;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+	background: none;
+}
+
+
+QScrollBar:vertical {
+	background-color: #000000;
+	width: 25px;
+	margin: 27px 3px 27px 3px;
+	border: 1px solid #2A2929;
+}
+
+
+QScrollBar::handle:vertical {
+	background-color: #76797C;
+	min-height: 15px;
+}
+
+QScrollBar::sub-line:vertical {
+	margin: 3px 0px 3px 0px;
+	height: 20px;
+	width: 20px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical {
+	margin: 3px 0px 3px 0px;
+	height: 20px;
+	width: 20px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover,
+QScrollBar::sub-line:vertical:on {
+	height: 20px;
+	width: 20px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical:hover,
+QScrollBar::add-line:vertical:on {
+	height: 20px;
+	width: 20px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical,
+QScrollBar::down-arrow:vertical {
+	background: none;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+	background: none;
+}
+
+/*================================================================
+QTabBar - e.g. File tabs (top), Bottom panel tabs (top), Autocompleter window tabs (bottom)
+================================================================*/
+QTabBar {
+	qproperty-drawBase: 0; /* important */
+	background-color: transparent;
+}
+
+/* <FIX> Workaround for QTabBars created from docked QDockWidgets which don't draw the border if not set and reseted as follows: */
+QTabBar {
+	border-top: 1px transparent #76797C;  /* set color for all QTabBars */
+}
+QDialog QTabBar {
+	border-color: transparent; /* set color for QTabBars inside Preferences dialog */
+}
+/* </FIX> */
+
+QTabBar::tab {
+    padding-top: 2px;
+    padding-bottom: 1ex;
+    padding-left: 2ex;
+    padding-right: 2ex;
+    min-width: 16ex;
+	color: #eff0f1;
+	background-color: #31363b;
+}
+
+QTabBar::tab:disabled {
+	background-color: #31363b;
+	border-width: 1px;
+	border-color: #454545;
+	border-style: solid;
+	color: #454545;
+}
+
+QTabBar::tab:disabled:selected {
+	background-color: #31363b;
+	border-width: 1px;
+	border-color: #454545;
+	border-style: solid;
+	color: #454545;
+}
+
+/* TOP TABS */
+
+QTabBar::tab:top {
+	border: 1px solid #76797C;
+	border-bottom: 1px transparent black;
+}
+    
+QTabBar::tab:top {
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+  
+QTabBar::tab:top:selected {
+	color: #eff0f1;
+	background-color: #54575B;
+	border: 1px solid #76797C;
+	border-bottom: 2px solid #3daee9;
+}
+
+
+QTabBar::tab:top:!selected:hover {
+	padding: 2px;
+	background-color: #18465d;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 1px
+}
+
+/* BOTTOM TABS */
+
+QTabBar::tab:bottom {
+	color: #eff0f1;
+	border: 1px solid #76797C;
+	border-top: 1px transparent black;
+	background-color: #31363b;
+}
+    
+QTabBar::tab:bottom {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 1px
+}
+
+QTabBar::tab:bottom:selected {
+	color: #eff0f1;
+	background-color: #54575B;
+	border: 2px solid #76797C;
+	border-top: 3px solid #3daee9;
+}
+
+QTabBar::tab:bottom:!selected:hover {
+	background-color: #18465d;
+}
+
+/*================================================================
+QTabWidget 
+================================================================*/
+QTabWidget::pane {
+    border-top: 1px solid #54575B;
+    border-left: 1px solid #54575B;
+    border-right: 1px solid #76797C;
+    border-bottom: 1px solid #76797C;
+}
+
+/*================================================================
+QDockWidget - e.g. "Search" header in internal PDF viewer 
+================================================================*/
+
+QDockWidget::title {
+	background: #373b3f; 
+	color: transparent;
+	border: 1px transparent;
+	text-align: left;
+}
+
+QDockWidget::float-button {
+	border: transparent;
+	padding: 0px;
+	icon-size: 25px;
+	background: transparent;
+}
+
+QDockWidget::float-button {
+	subcontrol-position: right center;
+	left: -50px;
+}
+
+QDockWidget::close-button {
+	subcontrol-position: right center;
+	left: -10px;
+}
+
+QDockWidget::float-button:hover {
+	subcontrol-position: right center;
+	left: -50px;
+}
+
+QDockWidget::close-button:hover {
+	subcontrol-position: right center;
+	left: -10px;
+}
+
+QDockWidget::close-button:pressed {
+	padding: 2px -2px -2px 2px;
+}
+
+QDockWidget::float-button:pressed {
+	padding: 2px -2px -2px 2px;
+}
+
+QDockWidget QListView {
+	outline: 0;
+	background: #272a2d;
+	alternate-background-color: #373b3f;
+	color: #eff0f1;
+}
+
+/*================================================================
+QTreeView, QListView
+================================================================*/
+QTreeView,
+QListView {
+	border: 1px solid #76797C;
+	background-color: #232629;
+}
+
+
+
+/*================================================================
+QPushButton
+================================================================*/
+QPushButton {
+	color: #eff0f1;
+	background-color: #31363b;
+}
+
+QPushButton:flat {
+    border: none;
+	background-color: #272a2d;
+}
+
+QPushButton:disabled {
+	background-color: #31363b;
+	border-width: 1px;
+	border-color: #454545;
+	border-style: solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #454545;
+}
+
+QPushButton:hover,
+QPushButton:focus {
+	background-color: #18465d;
+	color: #ffffff;
+}
+
+QPushButton:pressed {
+	background-color: #18465d;
+	padding-top: -15px;
+	padding-bottom: -17px;
+}
+
+QPushButton:checked {
+	background-color: #76797C;
+	border-color: #6A6969;
+}
+
+/*================================================================
+QToolButton - e.g. Reset pushbutton in GUI scaling, toolbar buttons
+================================================================*/
+QToolButton {
+	text-align: center;
+}
+
+/*================================================================
+QComboBox
+================================================================*/
+QComboBox {
+	selection-background-color: #db1c49;
+	border: 1px solid #76797C;
+    background-color: #4a4a4a;
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	min-width: 75px;
+}
+
+QAbstractSpinBox {
+	border: 1px solid #3daee9;
+	color: #6a6a6a;
+}
+
+QPushButton:hover,
+QAbstractSpinBox:hover,
+QLineEdit:hover,
+QTextEdit:hover,
+QPlainTextEdit:hover,
+QAbstractView:hover,
+QTreeView:hover {
+	border: 1px solid #3daee9;
+	color: #eff0f1;
+}
+
+QComboBox:on {
+	selection-background-color: #4a4a4a;
+}
+
+QComboBox QAbstractItemView {
+	background-color: #232629;
+	border: 1px solid #76797C;
+	selection-background-color: #18465d;
+}
+
+
+
+/*================================================================
+QLineEdit - e.g. Search textbox in internal pdf viewer
+================================================================*/
+QLineEdit {
+	selection-background-color: #db1c49;
+	border: 1px solid #76797C;
+}
+
+/*================================================================
+QHeaderView
+================================================================*/
+QHeaderView {
+	background-color: #31363b;
+	border: 1px transparent;
+	border-radius: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+QHeaderView::section {
+	background-color: #31363b;
+	color: #eff0f1;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-right: 2px;
+	padding-left: 2px;
+	border: 1px solid #76797C;
+	border-radius: 0px;
+	text-align: center;
+}
+
+QHeaderView::section::vertical::first,
+QHeaderView::section::vertical::only-one {
+	border-top: 1px solid #76797C;
+}
+
+QHeaderView::section::vertical {
+	border-top: transparent;
+}
+
+QHeaderView::section::horizontal::first,
+QHeaderView::section::horizontal::only-one {
+	border-left: 1px solid #76797C;
+}
+
+QHeaderView::section::horizontal {
+	border-left: transparent;
+}
+
+QHeaderView::section:checked {
+	color: #ffffff;
+	background-color: #31363B;
+}
+
+
+
+/*================================================================
+QTableView - e.g. configMenu()->Syntax highlighting table
+================================================================*/
+QTableView {
+	border: 1px solid #76797C;
+	gridline-color: #31363b;
+	background-color: #232629;
+}
+
+QTableView,
+QHeaderView {
+	border-radius: 0px;
+}
+
+QTableView::item:hover {
+	background: #18465d;
+}
+
+QTableView::item:selected:active,
+QTreeView::item:selected:active,
+QListView::item:selected:active {
+	background: #287399;
+	color: #eff0f1;
+}
+
+QTableCornerButton::section {
+	background-color: #31363b;
+	border: 1px transparent #76797C;
+	border-radius: 0px;
+}
+
+/*================================================================
+QDialog - e.g. config menu, About TXS window, Wizards
+================================================================*/
+QDialog {
+	background-color: #373b3f;
+}
+
+QDialog QLabel {
+	background-color: transparent;
+}
+
+QDialog QToolButton { /*Same as QPushButton*/
+	color: #eff0f1;
+	background-color: #31363b;
+	border-width: 1px;
+	border-color: #76797C;
+	border-style: solid;
+	padding: 5px;
+	outline: none;
+}
+
+QDialog QToolButton:hover,
+QDialog QToolButton:focus { /*Same as QPushButton*/
+	background-color: #18465d;
+	color: #ffffff;
+}
+
+QDialog QToolButton:pressed { /*Same as QPushButton*/
+	background-color: #18465d;
+	padding-top: -15px;
+	padding-bottom: -17px;
+}
+
+/* <FIX> Specific to table in "configMenu->Syntax highlighting" (hopefully) */
+
+QDialog QTableWidget::item,
+QDialog QTableView::item:hover { /* Turn off hover colour for cells -- it's distracting */
+	background-color: #31363b;
+}
+
+/* </FIX> */
+
+/*================================================================
+QSlider - e.g. GUI scaling settings
+================================================================*/
+QSlider,
+QSlider:active,
+QSlider:!active {
+	border: none;
+	background-color: transparent;
+}
+
+QSlider::groove:horizontal {
+	height: 12px;
+}
+
+QSlider::groove:vertical {
+	width: 12px;
+}
+
+QSlider::handle:horizontal:hover,
+QSlider::handle:vertical:hover,
+QSlider::handle:horizontal:pressed,
+QSlider::handle:vertical:pressed {
+	border: 1px solid #A21538;
+	background-color: #A21538;
+}
+
+/*================================================================
+QToolTip - e.g. popup upon hovering on filename tabs
+================================================================*/
+QToolTip {
+    border: 1px solid #272a2d;
+    background-color: #373b3f;
+    color: white;
+    padding: 0px;                /*remove padding, for fix combobox tooltip.*/
+}
+
+/*================================================================
+END
+================================================================*/

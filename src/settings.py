@@ -3,36 +3,13 @@ import os
 from chimerax.core.settings import Settings
 from chimerax.core.configfile import Value
 from chimerax.core.commands.cli import StringArg, EnumOf, ListOf
-from chimerax.ui.options import InputFolderOption, EnumOption
-
-
-def get_themes():
-    import themes
-    pkg_dir = os.path.dirname(themes.__file__)
-    theme_dir = os.path.join(pkg_dir, "themes", "style_sheets")
-    theme_names = ["Default"]
-    theme_files = [""]
-    
-    for f in os.listdir(theme_dir):
-        if f.endswith(".qss"):
-            theme_file = os.path.join(theme_dir, f)
-            theme_files.append(theme_file)
-            
-            name = os.path.basename(f)
-            name, _ = os.path.splitext(name)
-            theme_names.append(name)
-    
-    return theme_files, theme_names
+from chimerax.ui.options import EnumOption
 
 
 class ThemeOption(EnumOption):
     values = []
     labels = []
-    
-#     def __init__(self, *args, **kwargs):
-#         self._callback = None
-#         super().__init__(*args, **kwargs)
-    
+
 
 class _ThemeSettings(Settings):
     EXPLICIT_SAVE = {

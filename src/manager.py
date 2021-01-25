@@ -2,6 +2,13 @@ from chimerax.core.toolshed import ProviderManager
 
 
 class ThemeManager(ProviderManager):
+    """
+    manager to keep track of UI themes
+    providers for this manager should implement a run_provider method that returns a style sheet (str)
+    Qt style sheets are similar to CSS
+    for info on style sheets for Qt-based applications, see https://doc.qt.io/qt-5/stylesheet-reference.html
+    for examples, see https://doc.qt.io/qt-5/stylesheet-syntax.html
+    """
     def __init__(self, session, name):
         self._session = session
         self._themes = dict()
@@ -18,6 +25,9 @@ class ThemeManager(ProviderManager):
         ThemeOption.labels.append(name)
     
     def execute(self, name):
+        """
+        apply the style sheet specified by "name"
+        """
         if name not in self._themes:
             self._session.logger.warn("no theme named \"%s\"" % name)
             return

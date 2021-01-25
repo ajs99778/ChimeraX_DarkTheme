@@ -29,7 +29,7 @@ class ThemeManager(ProviderManager):
         apply the style sheet specified by "name"
         """
         if name not in self._themes:
-            self._session.logger.warn("no theme named \"%s\"" % name)
+            self._session.logger.warning("no theme named \"%s\"" % name)
             return
 
         from PySide2.QtWidgets import QApplication

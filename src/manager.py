@@ -32,7 +32,7 @@ class ThemeManager(ProviderManager):
             self._session.logger.warning("no theme named \"%s\"" % name)
             return
 
-        from PySide2.QtWidgets import QApplication
+        from Qt.QtWidgets import QApplication
         
         style_sheet = self._themes[name]()
 

@@ -4,7 +4,7 @@
             maxSessionVersion="3"
             package="themes"
             purePython="true"
-            version="0.3">
+            version="0.3.1">
             
             <Author>Tony Schaefer</Author>
             <Email>tony.schaefer@uga.edu</Email>
@@ -31,6 +31,7 @@
                 <Provider name="solarized dark"/>
                 <Provider name="solarized light"/>
                 <Provider name="dark"/>
+                <Provider name="molden"/>
             </Providers>
 
             <Classifiers>
@@ -43,6 +44,7 @@
 
     <DataFiles>
         <DataDir>style_sheets</DataDir>
+        <DataDir>icons</DataDir>
     </DataFiles>
 
 </BundleInfo>

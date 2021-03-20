@@ -39,14 +39,19 @@ class _THEME_API(BundleAPI):
             if name == "Default":
                 return ""
             else:
-                import os.path
+                import os
                 import themes
+                import re
                 pkg_dir = os.path.dirname(themes.__file__)
                 theme_dir = os.path.join(pkg_dir, "style_sheets")
+                icon_dir = os.path.join(pkg_dir, "icons")
+                icon_dir = icon_dir.replace(os.sep, "/")
                 sheet_path = os.path.join(theme_dir, "%s.qss" % name)
                 with open(sheet_path, "r") as f:
                     style_sheet = f.read()
                 
+                style_sheet = style_sheet.replace("ICON_DIR", icon_dir)
+
                 return style_sheet
 
 bundle_api = _THEME_API()
